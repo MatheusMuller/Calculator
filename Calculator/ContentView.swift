@@ -71,41 +71,45 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .trailing, spacing: 0) {
-        // spacing = 0 remove espaçamento entre as linhas e trailing joga o conteúdo para o final da linha
+        // spacing = 0 removes line spacing and trailing throws content to the end of the line
             
             Spacer()
             HStack {
                 Text(values)
                     .padding()
-                    .lineLimit(1) // Define a quantidade de linhas no bloco
-                    .font(.system(size: CGFloat(80 / Int((Double(String(result).count + 10) / 8.0))))) // Vai diminuindo o tamanho da fonte
+                    .lineLimit(1) // Defines the number of lines in the block
+                    .font(.system(size: CGFloat(80 / Int((Double(String(result).count + 10) / 8.0))))) // It decreases the font size
                     .foregroundColor(Color.white)
                     .frame(maxWidth: .infinity)
-                    .fixedSize(horizontal: true, vertical: false) // Corrige a largura, jogou o número à direita
+                    .fixedSize(horizontal: true, vertical: false) // Fix the width, put the number on the right
             }
             
             HStack(spacing: 0) {
                 Button("AC") {
                     reset()
                 }.padding()
-                 .frame(maxWidth: .infinity) // utiliza todo o espaço disponível
+                 .frame(maxWidth: .infinity) // Uses all available space
+                 .font(.system(size: 30)) // Increasing button font size
                 
                 Button("+/-") {
                     result = result * -1
                     calculate()
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("%") {
                     result = result / 100
                     calculate()
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("/") {
                     calculate()
                     operation = 4
-                }.padding(.vertical, 40)
+                }.padding(.vertical, 30)
+                 .font(.system(size: 30))
                  .frame(maxWidth: .infinity)
                  .background(Color.orange)
                 
@@ -115,22 +119,26 @@ struct ContentView: View {
                 Button("7") {
                     addNumbers(digit: 7)
                 }.padding()
-                 .frame(maxWidth: .infinity) // utiliza todo o espaço disponível
+                 .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("8") {
                     addNumbers(digit: 8)
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("9") {
                     addNumbers(digit: 9)
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
-                Button("X") {
+                Button("x") {
                     calculate()
                     operation = 3
-                }.padding(.vertical, 40)
+                }.padding(.vertical, 30)
+                 .font(.system(size: 30))
                  .frame(maxWidth: .infinity)
                  .background(Color.orange)
                 
@@ -141,21 +149,25 @@ struct ContentView: View {
                     addNumbers(digit: 4)
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("5") {
                     addNumbers(digit: 5)
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("6") {
                     addNumbers(digit: 6)
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("-") {
                     calculate()
                     operation = 2
-                }.padding(.vertical, 40)
+                }.padding(.vertical, 30)
+                 .font(.system(size: 30))
                  .frame(maxWidth: .infinity)
                  .background(Color.orange)
                 
@@ -166,21 +178,25 @@ struct ContentView: View {
                     addNumbers(digit: 1)
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("2") {
                     addNumbers(digit: 2)
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("3") {
                     addNumbers(digit: 3)
                 }.padding()
                  .frame(maxWidth: .infinity)
+                 .font(.system(size: 30))
                 
                 Button("+") {
                     calculate()
                     operation = 1
-                }.padding(.vertical, 40)
+                }.padding(.vertical, 30)
+                 .font(.system(size: 30))
                  .frame(maxWidth: .infinity)
                  .background(Color.orange)
                 
@@ -192,6 +208,7 @@ struct ContentView: View {
                         addNumbers(digit: 0)
                     }.padding()
                         .frame(minWidth: geometry.size.width / 2)
+                        .font(.system(size: 30))
                     
                     Button(".") {
                         if hasDecimal == 0.0 {
@@ -200,12 +217,14 @@ struct ContentView: View {
                         }
                     }.padding()
                      .frame(maxWidth: .infinity)
+                     .font(.system(size: 30))
                     
                     Button("=") {
                         calculate()
                         previousOperation = 111 // Using a value that will never be used to reset
                         operation = 111 // Resets all past operations
-                    }.padding(.vertical, 40)
+                    }.padding(.vertical, 30)
+                        .font(.system(size: 30))
                      .frame(maxWidth: .infinity)
                      .background(Color.orange)
                     
