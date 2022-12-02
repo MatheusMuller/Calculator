@@ -16,5 +16,12 @@ Doing other operations:
 
 https://user-images.githubusercontent.com/11414535/205172991-08ab3dd8-c377-4f4e-93d1-c8c9d8a7cfe8.mov
 
+<br/>
+
+Using percentage, positive and negative:
+
+https://user-images.githubusercontent.com/11414535/205187909-9b053093-294f-409a-aafc-6f5604340f52.mov
+
+
 
 
